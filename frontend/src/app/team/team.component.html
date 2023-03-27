@@ -1,0 +1,40 @@
+<label>
+  <div class="box">
+    <h1 class="title">
+      ADD TEAM
+    </h1>
+    <form [formGroup]="teamForm" (ngSubmit)="save()" novalidate>
+      <div>
+        <label class="text">Name:</label>
+        <input type="text" class="input form-control" formControlName="name" placeholder="name" ngModel>
+      </div>
+      <div>
+        <label class="text">Country:</label>
+        <input type="text" class="input form-control" formControlName="country" placeholder="country" ngModel>
+      </div>
+      <button class="btn" type="submit">SAVE</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h1 class="title">
+      TRANSFER PLAYER
+    </h1>
+    <form [formGroup]="transferForm" (ngSubmit)="transfer()" novalidate>
+      <div class="from-group">
+        <label class="text">Team To id:</label>
+        <input type="number" class="input form-control" formControlName="teamId" placeholder="team id" ngModel>
+      </div>
+      <div class="from-group">
+        <label class="text">Player id:</label>
+        <input type="number" class="input form-control" formControlName="playerId" placeholder="player id" ngModel>
+      </div>
+      <button class="btn" type="submit">TRANSFER</button>
+    </form>
+  </div>
+  <div class="item" *ngFor="let team of teams">
+    id:{{team.id}}<br>
+    name:{{team.name}}<br>
+    name:{{team.country}}<br>
+  </div>
+</label>
