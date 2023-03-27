@@ -1,0 +1,38 @@
+<label>
+  <div class="box">
+    <h1 class="title">
+      SAVE PLAYER
+    </h1>
+    <form [formGroup]="reactiveForm" (ngSubmit)="save()" novalidate>
+      <div class="from-group">
+        <label class="text">First Name:</label>
+        <input type="text" class="input form-control" formControlName="firstName" placeholder="firstName" ngModel>
+      </div>
+      <div class="form-group">
+        <label class="text">Last Name:</label>
+        <input type="text" class="input form-control" formControlName="lastName" placeholder="lastName" ngModel>
+      </div>
+      <div class="from-group">
+        <label class="text">Age:</label>
+        <input type="number" step="any" class="input form-control" formControlName="age" placeholder="age" ngModel>
+      </div>
+      <div class="from-group">
+        <label class="text">Experience:</label>
+        <input type="text" class="input form-control" formControlName="experience" placeholder="experience" ngModel>
+      </div>
+      <div class="from-group">
+        <label class="text">Team id:</label>
+        <input type="number" class="input form-control" formControlName="teamId" placeholder="team id" ngModel>
+      </div>
+      <button class="btn" type="submit">SAVE</button>
+    </form>
+  </div>
+  <div class="item" *ngFor="let player of players">
+    id:{{player.id}}<br>
+    firstName:{{player.firstName}}<br>
+    lastName:{{player.lastName}}<br>
+    age:{{player.age}}<br>
+    experience:{{player.experience}}<br>
+    teamId:{{player.teamId}}<br>
+  </div>
+</label>
